@@ -1,13 +1,17 @@
-const tube = require('./')
+const DataTube = require('./')
 const handler = require('./lib/handler')
 const config = require('./config')
 
-tube.fromStore = tube.database('firebase')(config.firebase)
-tube.toDB = tube.database('mysql')(config.mysql)
+// tube.fromStore = tube.database('firebase')(config.firebase)
+// tube.toStore = tube.database('mysql')(config.mysql)
 
 const query = '' // sql format ?
+const tube = new DataTube()
+
 tube
-  .extract(this.formDB, query)
-  .toFile()
+  .connect({type: 'firebase', config: config.firebase})
+  .extract({collection: 'appointments', query})
+  // .toFile(false)
   .transform(handler)
-  .load(this.toDB)
+  .connect({type: 'mysql', config: config.mysql})
+  .load({collection: 'joeProblems'})
