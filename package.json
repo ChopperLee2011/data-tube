@@ -1,0 +1,24 @@
+{
+  "name": "data-tube",
+  "version": "0.0.1",
+  "description": "just another ETL tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "etl"
+  ],
+  "author": "Chopper Lee <lihengpro@gmail.com>",
+  "engines": {
+    "npm": ">=3.8.0",
+    "node": ">=6.9.5"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.6.0"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
+  }
+}
