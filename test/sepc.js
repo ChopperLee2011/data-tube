@@ -6,9 +6,9 @@ const config = require('./config')
 // tube.toStore = tube.database('mysql')(config.mysql)
 
 const query = '' // sql format ?
-const tube = new DataTube()
 
 tube
+  .fromCsv()
   .connect({type: 'firebase', config: config.firebase})
   .extract({collection: 'appointments', query})
   // .toFile(false)
